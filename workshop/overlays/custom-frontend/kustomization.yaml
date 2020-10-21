@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: jesse
+namespace: jesse-2
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -12,13 +12,14 @@ configMapGenerator:
   name: hello-cm
 
 patchesStrategicMerge:
+  - patches/ingress.yaml
   - patches/index-override.yaml
   - patches/probes.yaml
   - patches/resources.yaml
 
 images:
 - name: probes-api
-  newName: verbruggenjesse/probes-api
+  newName: verbruggenjesse/webserver
   newTag: 1.0.0
 
 resources:
