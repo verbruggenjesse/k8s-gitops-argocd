@@ -14,7 +14,6 @@ configMapGenerator:
 patchesStrategicMerge:
   - patches/ingress.yaml
   - patches/index-override.yaml
-  - patches/probes.yaml
   - patches/resources.yaml
 
 images:
