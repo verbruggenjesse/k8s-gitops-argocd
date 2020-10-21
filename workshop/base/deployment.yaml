@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-axxes
+spec:
+  selector:
+    matchLabels:
+      app: hello-axxes
+  template:
+    metadata:
+      labels:
+        app: hello-axxes
+    spec:
+      containers:
+      - name: hello-axxes
+        image: probes-api
